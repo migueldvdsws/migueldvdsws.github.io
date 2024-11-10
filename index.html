@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Carousel Template · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+    <header data-bs-theme="dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Curriculum</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#" onclick="scrollTLaboral(event)">Antecedentes Laborales</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="scrollTAcademico(event)">Antecedentes Acedemicos</a>
+              </li>
+             
+                <li class="nav-item">
+                  <a class="nav-link" onclick="scrollTAcerca(event)">Acerca de mi</a>
+                </li>
+              </ul>
+            <form class="d-flex" role="search" onsubmit="buscarTexto(event)">
+              <input id="searchInput" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+
+<main>
+
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Miguel Ruiz</h1>
+            <h2>Ingeniero Geomensor</h2>
+            <p class="opacity-75">
+              <i class="fas fa-envelope"></i> Mail: miguel.ruiz.benavides@gmail.com
+          </p>
+            <img src="assets/img/unnamed.jpg" alt="SIG">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Portafolio.</h1>
+            <p>Acceder a portafolio de proyectos.</p>
+            <a href="portafolio.html">Portafolio</a>.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <section id="Acerca-de-mi" class="container text-center my-5">
+
+
+    <h2 class="display-3 fw-bold my-4" id="acerca">Acerca de mi</h2>
+
+    <p class="my-4">
+        Soy especialista en automatización de procesos cartográficos, en el manejo de bases de datos geográficas, así como en la implementación de procesos de machine learning y deep learning en el ámbito geográfico. Estas habilidades me permiten optimizar flujos de trabajo y aportar soluciones innovadoras en el análisis espacial.
+    </p>
+
+
+    <div class="row">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <i class="fab fa-python fa-3x my-3"></i>
+                <h3 class="my-3 fw-bold">Python para Automatización de Procesos Cartográficos</h3>
+                <p class="my-3">
+                    Utilización de Python para la automatización de procesos cartográficos, optimizando flujos de trabajo y facilitando el manejo y análisis de datos espaciales.
+                </p>
+            </div>
+            <div class="col-12 col-md-4">
+                <i class="fas fa-database fa-3x my-3"></i>
+                <h3 class="my-3 fw-bold">Bases de Datos Geográficas</h3>
+                <p class="my-3">
+                    Habilidades en normalización de bases de datos, limpieza, y creación de dominios, subtipos y reglas de atributos para una gestión de datos geográficos precisa y eficiente.
+                </p>
+            </div>
+            <div class="col-12 col-md-4">
+                <i class="fas fa-brain fa-3x my-3"></i>
+                <h3 class="my-3 fw-bold">Deep Learning en Aplicaciones Geoespaciales</h3>
+                <p class="my-3">
+                    Habilidades en el desarrollo de procesos de deep learning aplicados a datos geoespaciales, impulsando soluciones avanzadas en el análisis y procesamiento de información espacial.
+                </p>
+            </div>
+        </div>
+        
+</section>
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1" id="Laboral">Geospatial Analyst</h2>
+        <p class="lead">Desde julio de 2022 hasta la fecha, trabajo en Esri Chile como analista geoespacial,.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="assets\img\card-1.jpg" alt="SIG" class="featurette-image img-fluid mx-auto" width="500" height="500">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading fw-normal lh-1" id="academico">Antecedentes Académicos</h2>
+          <ul class="lead">
+              <li>Carrera profesional incompleta (2015-2017): Ingeniería Física</li>
+              <li>Carrera profesional completa (2018-2022): Ingeniería en Ejecución en Geomensura</li>
+              <li>Diplomado: “Diplomado en Data Science - Machine Learning, Inteligencia Artificial, Deep Learning”</li>
+              <li>Magíster en curso (2023-2024): Magíster en Data Science</li>
+              <li>Carrera en curso Desafío Latam (2024-2025): Fullstack Developer</li>
+          </ul>
+      </div>
+      <div class="col-md-5 order-md-1">
+          <img src="assets\img\academico.jpg" alt="academico.jpg" class="featurette-image img-fluid mx-auto" width="500" height="500">
+      </div>
+  </div>
+  <div class="row featurette">
+    <div class="col-md-7 order-md-1">
+        <h2 class="featurette-heading fw-normal lh-1">Cursos Adicionales</h2>
+        <ul class="lead">
+            <li>Curso Esri: Flujos de trabajo de ArcGIS Online en su Organización</li>
+            <li>Curso Esri: Complemento Utility Network</li>
+            <li>Mooc Esri: Spatial Data Science: The New Frontier in Analytics</li>
+            <li>Universidad Adolfo Ibañez: Chat GPT e Inteligencia Artificial Generativa</li>
+        </ul>
+    </div>
+    <div class="col-md-5 order-md-1">
+        <img src="assets/img/cursosFormativos.jpg" alt="Imagen de cursos adicionales" class="featurette-image img-fluid mx-auto" width="500" height="500">
+    </div>
+</div>
+
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>Miguel Ruiz 2024. Todos los derechos reservados.</p>
+  </footer>
+</main>
+<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>
+
+<script>
+function scrollTAcademico(event) {
+  event.preventDefault(); // Evita cualquier acción por defecto del enlace
+
+  // Verifica si la sección datos existe
+  const seccionDatos = document.getElementById("academico");
+  if (seccionDatos) {
+    // Desplaza la página hacia la sección de datos
+    seccionDatos.scrollIntoView({ behavior: "smooth", block: "start" });
+  } else {
+    console.error("La sección 'datos' no se encontró.");
+  }
+}
+function scrollTLaboral(event) {
+  event.preventDefault(); // Evita cualquier acción por defecto del enlace
+
+  // Verifica si la sección datos existe
+  const seccionDatos = document.getElementById("Laboral");
+  if (seccionDatos) {
+    // Desplaza la página hacia la sección de datos
+    seccionDatos.scrollIntoView({ behavior: "smooth", block: "start" });
+  } else {
+    console.error("La sección 'datos' no se encontró.");
+  }
+}
+function scrollTAcerca(event) {
+  event.preventDefault(); // Evita cualquier acción por defecto del enlace
+
+  // Verifica si la sección datos existe
+  const seccionDatos = document.getElementById("acerca");
+  if (seccionDatos) {
+    // Desplaza la página hacia la sección de datos
+    seccionDatos.scrollIntoView({ behavior: "smooth", block: "start" });
+  } else {
+    console.error("La sección 'datos' no se encontró.");
+  }
+}
+function buscarTexto(event) {
+    event.preventDefault(); // Evita que el formulario se envíe y refresque la página
+    
+    const textoBuscado = document.getElementById("searchInput").value.toLowerCase();
+    
+    // Limpia los resultados de búsquedas anteriores
+    limpiarResaltado();
+
+    if (textoBuscado === "") {
+      alert("Por favor, ingresa un texto para buscar.");
+      return;
+    }
+    
+    // Selecciona todo el contenido de la página
+    const contenidoPagina = document.body.innerHTML;
+    
+    // Genera un patrón de búsqueda (Regex)
+    const regex = new RegExp(`(${textoBuscado})`, 'gi');
+    
+    // Reemplaza el texto encontrado y lo envuelve en un span para resaltarlo
+    const contenidoModificado = contenidoPagina.replace(regex, "<span class='resaltado'>$1</span>");
+    document.body.innerHTML = contenidoModificado;
+
+    // Desplazarse a la primera coincidencia resaltada
+    const primeraCoincidencia = document.querySelector(".resaltado");
+    if (primeraCoincidencia) {
+      // Desplaza la página a la posición de la primera coincidencia
+      primeraCoincidencia.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+
+  function limpiarResaltado() {
+    // Elimina cualquier resaltado previo
+    const elementosResaltados = document.querySelectorAll(".resaltado");
+    elementosResaltados.forEach(elemento => {
+      elemento.classList.remove("resaltado");
+    });
+  }
+</script>
